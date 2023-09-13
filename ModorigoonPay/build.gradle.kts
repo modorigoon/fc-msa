@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
     id("org.springframework.boot") version "2.7.15"
@@ -9,10 +8,10 @@ plugins {
 
     kotlin("jvm") version kotlinVersion
 
-    kotlin("plugin.spring") version kotlinVersion apply false
-    kotlin("plugin.jpa") version kotlinVersion apply false
-    kotlin("plugin.allopen") version kotlinVersion apply false
-    kotlin("plugin.noarg") version kotlinVersion apply false
+    kotlin("plugin.spring") version kotlinVersion
+    kotlin("plugin.jpa") version kotlinVersion
+    kotlin("plugin.allopen") version kotlinVersion
+    kotlin("plugin.noarg") version kotlinVersion
 }
 
 allprojects {
@@ -28,22 +27,42 @@ subprojects {
     apply(plugin = "org.springframework.boot")
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.jetbrains.kotlin.jvm")
+
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
+    apply(plugin = "org.jetbrains.kotlin.plugin.jpa")
+    apply(plugin = "org.jetbrains.kotlin.plugin.allopen")
+    apply(plugin = "org.jetbrains.kotlin.plugin.noarg")
+
+    noArg {
+        annotation("javax.persistence.Entity")
+        annotation("javax.persistence.Embeddable")
+        annotation("javax.persistence.MappedSuperclass")
+    }
+
+    allOpen {
+        annotation("javax.persistence.Entity")
+        annotation("javax.persistence.Embeddable")
+        annotation("javax.persistence.MappedSuperclass")
+    }
 
     dependencies {
         testImplementation(kotlin("test"))
         testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.15")
         testImplementation("junit:junit:4.13.2")
 
+        implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.0")
+
         implementation("org.springframework.boot:spring-boot-configuration-processor:2.7.15")
         implementation("org.springframework.boot:spring-boot-starter-validation:2.7.15")
         implementation("org.springframework.boot:spring-boot-starter-actuator:2.7.15")
         implementation("org.springframework.boot:spring-boot-starter-web:2.7.15")
-        implementation("org.springframework.data:spring-data-jpa:2.7.15")
+        implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.7.15")
         implementation("javax.persistence:javax.persistence-api:2.2")
 
         implementation("io.springfox:springfox-swagger-ui:2.9.2")
         implementation("io.springfox:springfox-swagger2:2.9.2")
+
+        implementation("com.h2database:h2:2.2.222")
     }
 
     dependencyManagement {

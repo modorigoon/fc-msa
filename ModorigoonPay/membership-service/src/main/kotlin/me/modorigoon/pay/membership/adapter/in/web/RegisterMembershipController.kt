@@ -1,14 +1,29 @@
 package me.modorigoon.pay.membership.adapter.`in`.web
 
-import org.springframework.web.bind.annotation.GetMapping
+import me.modorigoon.pay.membership.application.port.`in`.RegisterMembershipCommand
+import me.modorigoon.pay.membership.application.port.`in`.RegisterMembershipUseCase
+import me.modorigoon.pay.membership.common.WebAdapter
+import me.modorigoon.pay.membership.domain.Membership
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 
+@WebAdapter
 @RestController
-class RegisterMembershipController {
+class RegisterMembershipController(
+    val registerMembershipUseCase: RegisterMembershipUseCase
+) {
 
-    @GetMapping("/test")
-    fun test(): String {
-        return "Hello!"
+    @PostMapping("/membership/register")
+    fun register(@RequestBody request: RegisterMemberShipRequest): Membership {
+        val command: RegisterMembershipCommand = RegisterMembershipCommand(
+            name = request.name,
+            email = request.email,
+            address = request.address,
+            isValid = true,
+            isCorp = request.isCorp
+        )
+        return registerMembershipUseCase.registerMembership(command)
     }
 }
