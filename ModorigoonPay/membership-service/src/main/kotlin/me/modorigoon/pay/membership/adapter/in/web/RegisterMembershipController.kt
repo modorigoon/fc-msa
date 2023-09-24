@@ -4,8 +4,10 @@ import me.modorigoon.pay.membership.application.port.`in`.RegisterMembershipComm
 import me.modorigoon.pay.membership.application.port.`in`.RegisterMembershipUseCase
 import me.modorigoon.pay.membership.common.WebAdapter
 import me.modorigoon.pay.membership.domain.Membership
+import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 
 
@@ -16,8 +18,9 @@ class RegisterMembershipController(
 ) {
 
     @PostMapping("/membership/register")
+    @ResponseStatus(HttpStatus.CREATED)
     fun register(@RequestBody request: RegisterMemberShipRequest): Membership {
-        val command: RegisterMembershipCommand = RegisterMembershipCommand(
+        val command = RegisterMembershipCommand(
             name = request.name,
             email = request.email,
             address = request.address,
