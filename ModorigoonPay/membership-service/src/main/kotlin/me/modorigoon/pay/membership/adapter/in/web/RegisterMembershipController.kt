@@ -25,7 +25,7 @@ class RegisterMembershipController(
             email = request.email,
             address = request.address,
             isValid = true,
-            isCorp = request.isCorp
+            isCorp = request.corp
         )
         return registerMembershipUseCase.registerMembership(command)
     }
