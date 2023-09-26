@@ -1,4 +1,4 @@
-package me.modorigoon.pay.membership.common
+package me.modorigoon.pay.common
 
 import javax.validation.ConstraintViolation
 import javax.validation.ConstraintViolationException

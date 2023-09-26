@@ -1,7 +1,14 @@
 tasks.bootJar {
-    enabled = false
+    enabled = true
 }
 
 tasks.jar {
-    enabled = true
+    manifest {
+
+    }
+}
+
+dependencies {
+
+    implementation(project(":common"))
 }

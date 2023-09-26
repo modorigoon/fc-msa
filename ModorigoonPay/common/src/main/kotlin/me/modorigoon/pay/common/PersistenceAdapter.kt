@@ -1,4 +1,4 @@
-package me.modorigoon.pay.membership.common
+package me.modorigoon.pay.common
 
 import org.springframework.stereotype.Component
 
@@ -7,4 +7,4 @@ import org.springframework.stereotype.Component
 @Retention(AnnotationRetention.RUNTIME)
 @MustBeDocumented
 @Component
-annotation class UseCase(val value: String = "")
+annotation class PersistenceAdapter(val value: String = "")

@@ -1,9 +1,9 @@
 package me.modorigoon.pay.membership.adapter.out.persistance
 
+import me.modorigoon.pay.common.PersistenceAdapter
 import me.modorigoon.pay.membership.application.port.out.FindMembershipPort
 import me.modorigoon.pay.membership.application.port.out.ModifyMembershipPort
 import me.modorigoon.pay.membership.application.port.out.RegisterMembershipPort
-import me.modorigoon.pay.membership.common.PersistenceAdapter
 import me.modorigoon.pay.membership.domain.Membership
 
 

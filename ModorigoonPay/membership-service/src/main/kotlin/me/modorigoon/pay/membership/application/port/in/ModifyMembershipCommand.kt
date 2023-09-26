@@ -1,6 +1,6 @@
 package me.modorigoon.pay.membership.application.port.`in`
 
-import me.modorigoon.pay.membership.common.SelfValidating
+import me.modorigoon.pay.common.SelfValidating
 import javax.validation.constraints.AssertTrue
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull

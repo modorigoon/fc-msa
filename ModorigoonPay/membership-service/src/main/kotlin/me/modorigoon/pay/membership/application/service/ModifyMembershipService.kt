@@ -1,9 +1,9 @@
 package me.modorigoon.pay.membership.application.service
 
+import me.modorigoon.pay.common.UseCase
 import me.modorigoon.pay.membership.application.port.`in`.ModifyMembershipCommand
 import me.modorigoon.pay.membership.application.port.`in`.ModifyMembershipUseCase
 import me.modorigoon.pay.membership.application.port.out.ModifyMembershipPort
-import me.modorigoon.pay.membership.common.UseCase
 import me.modorigoon.pay.membership.domain.Membership
 
 

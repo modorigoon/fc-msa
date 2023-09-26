@@ -1,9 +1,9 @@
 package me.modorigoon.pay.membership.application.service
 
+import me.modorigoon.pay.common.UseCase
 import me.modorigoon.pay.membership.application.port.`in`.RegisterMembershipCommand
 import me.modorigoon.pay.membership.application.port.`in`.RegisterMembershipUseCase
 import me.modorigoon.pay.membership.application.port.out.RegisterMembershipPort
-import me.modorigoon.pay.membership.common.UseCase
 import me.modorigoon.pay.membership.domain.Membership
 import org.springframework.transaction.annotation.Transactional
 
