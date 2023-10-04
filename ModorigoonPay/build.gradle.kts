@@ -53,15 +53,14 @@ subprojects {
         implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.0")
 
         implementation("org.springframework.boot:spring-boot-configuration-processor:2.7.15")
-        implementation("org.springframework.boot:spring-boot-starter-actuator:2.7.15")
         implementation("org.springframework.boot:spring-boot-starter-web:2.7.15")
         implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.7.15")
         implementation("javax.persistence:javax.persistence-api:2.2")
 
         implementation("org.springframework.boot:spring-boot-starter-validation:2.7.15")
 
-        implementation("io.springfox:springfox-swagger-ui:2.9.2")
-        implementation("io.springfox:springfox-swagger2:2.9.2")
+        implementation("io.springfox:springfox-boot-starter:3.0.0")
+        implementation("io.springfox:springfox-swagger-ui:3.0.0")
 
         implementation("com.h2database:h2:2.2.222")
     }
