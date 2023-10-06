@@ -63,6 +63,8 @@ subprojects {
         implementation("io.springfox:springfox-swagger-ui:3.0.0")
 
         implementation("mysql:mysql-connector-java:8.0.33")
+
+        implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2")
     }
 
     dependencyManagement {

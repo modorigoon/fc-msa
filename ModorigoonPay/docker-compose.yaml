@@ -23,6 +23,8 @@ services:
       - modorigoonpay_network
     ports:
       - "8081:8080"
+    depends_on:
+      - mysql
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/modorigoon_pay?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=mysqluser
