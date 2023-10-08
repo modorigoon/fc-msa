@@ -44,7 +44,7 @@ class RegisterBankAccountControllerTest(
         )
 
         mockMvc.perform(
-            MockMvcRequestBuilders.post("/bank-account/register")
+            MockMvcRequestBuilders.post("/banking/account/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(mapper.writeValueAsString(request))
         ).andExpect(MockMvcResultMatchers.status().isCreated)

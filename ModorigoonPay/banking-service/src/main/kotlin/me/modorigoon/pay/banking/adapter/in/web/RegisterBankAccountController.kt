@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class RegisterBankAccountController(val registerBankAccountUseCase: RegisterBankAccountUseCase) {
 
-    @PostMapping("/bank-account/register")
+    @PostMapping("/banking/account/register")
     fun registerBankAccount(@RequestBody request: RegisterBankAccountRequest): ResponseEntity<RegisteredBankAccount> =
         ResponseEntity(
             registerBankAccountUseCase.registerBankAccount(
