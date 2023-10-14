@@ -39,4 +39,7 @@ tasks.jar {
 dependencies {
     implementation(project(":common"))
     testImplementation("com.h2database:h2:2.2.222")
+
+    implementation("io.springfox:springfox-boot-starter:3.0.0")
+    implementation("io.springfox:springfox-swagger-ui:3.0.0")
 }
