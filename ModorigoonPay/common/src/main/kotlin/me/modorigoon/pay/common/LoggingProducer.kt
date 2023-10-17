@@ -2,10 +2,12 @@ package me.modorigoon.pay.common
 
 import org.apache.kafka.clients.producer.KafkaProducer
 import org.apache.kafka.clients.producer.ProducerRecord
+import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Component
 import java.util.Properties
 
 
+@Profile("!test")
 @Component
 class LoggingProducer {
 

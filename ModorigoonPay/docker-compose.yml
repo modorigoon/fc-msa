@@ -92,6 +92,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=mysqlpw
       - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.MySQL5InnoDBDialect
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SERVICE_MEMBERSHIP_URL=http://membership-service:8080
 
   logging-consumer:
     image: logging-consumer-1.0.0

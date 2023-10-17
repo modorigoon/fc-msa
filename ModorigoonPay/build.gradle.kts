@@ -12,6 +12,7 @@ plugins {
     kotlin("plugin.jpa") version kotlinVersion
     kotlin("plugin.allopen") version kotlinVersion
     kotlin("plugin.noarg") version kotlinVersion
+    kotlin("plugin.serialization") version kotlinVersion
 }
 
 allprojects {
@@ -62,6 +63,7 @@ subprojects {
         implementation("mysql:mysql-connector-java:8.0.33")
 
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2")
+        implementation("org.jetbrains.kotlin:kotlin-serialization:1.9.10")
     }
 
     dependencyManagement {
