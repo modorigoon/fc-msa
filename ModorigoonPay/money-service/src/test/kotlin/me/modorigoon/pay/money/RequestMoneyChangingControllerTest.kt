@@ -1,7 +1,7 @@
 package me.modorigoon.pay.money
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import me.modorigoon.pay.money.adapter.`in`.IncreaseMoneyChangingRequest
+import me.modorigoon.pay.money.adapter.`in`.web.IncreaseMoneyChangingRequest
 import org.junit.jupiter.api.Test
 import org.junit.runner.RunWith
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc

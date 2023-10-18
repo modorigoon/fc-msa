@@ -1,4 +1,4 @@
-package me.modorigoon.pay.money.adapter.`in`
+package me.modorigoon.pay.money.adapter.`in`.web
 
 
 data class IncreaseMoneyChangingRequest(

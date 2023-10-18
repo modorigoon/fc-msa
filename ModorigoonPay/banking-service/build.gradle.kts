@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.util.capitalizeDecapitalize.toLowerCaseAsciiOnly
 
 plugins {
     id("com.google.cloud.tools.jib") version "3.4.0"
+    kotlin("plugin.serialization") version "1.9.0"
 }
 
 apply(plugin = "com.google.cloud.tools.jib")

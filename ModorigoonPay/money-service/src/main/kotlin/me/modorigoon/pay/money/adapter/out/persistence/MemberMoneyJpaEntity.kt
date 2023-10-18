@@ -1,4 +1,4 @@
-package me.modorigoon.pay.money.adapter.out
+package me.modorigoon.pay.money.adapter.out.persistence
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue

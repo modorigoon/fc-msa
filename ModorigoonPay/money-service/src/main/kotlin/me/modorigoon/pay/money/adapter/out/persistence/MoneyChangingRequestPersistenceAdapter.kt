@@ -1,4 +1,4 @@
-package me.modorigoon.pay.money.adapter.out
+package me.modorigoon.pay.money.adapter.out.persistence
 
 import me.modorigoon.pay.common.PersistenceAdapter
 import me.modorigoon.pay.money.application.port.out.IncreaseMoneyPort

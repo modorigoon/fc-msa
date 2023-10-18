@@ -1,4 +1,4 @@
-package me.modorigoon.pay.money.adapter.`in`
+package me.modorigoon.pay.money.adapter.`in`.web
 
 import me.modorigoon.pay.common.WebAdapter
 import me.modorigoon.pay.money.application.usecase.IncreaseMoneyRequestCommand
@@ -19,7 +19,7 @@ class RequestMoneyChangingController(val increaseMoneyRequestUseCase: IncreaseMo
         val command = IncreaseMoneyRequestCommand(
             targetMembershipId = request.targetMembershipId, amount = request.amount
         )
-        val moneyChangingRequest = increaseMoneyRequestUseCase.increaseMoneyRequest(command)
+        val moneyChangingRequest = increaseMoneyRequestUseCase.increaseMoneyRequestAsync(command)!!
 
         val resultDetail = MoneyChangingResultDetail(
             moneyChangingRequestId = moneyChangingRequest.moneyChangingRequestId!!,
