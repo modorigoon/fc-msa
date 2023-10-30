@@ -1,0 +1,3 @@
+service:
+  membership:
+    url: localhost:8081
