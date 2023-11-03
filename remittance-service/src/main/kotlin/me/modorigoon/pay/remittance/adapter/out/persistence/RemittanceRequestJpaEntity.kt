@@ -13,7 +13,7 @@ import javax.persistence.Table
 data class RemittanceRequestJpaEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val remittanceRequestId: Long,
+    val remittanceRequestId: Long?,
     val fromMembershipId: Long,
     val toMembershipId: Long,
     val toBankName: String,

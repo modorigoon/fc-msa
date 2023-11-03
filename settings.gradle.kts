@@ -1,4 +1,4 @@
-rootProject.name = "ModorigoonPay"
+rootProject.name = "modorigoon-pay"
 
 include("membership-service")
 include("banking-service")
