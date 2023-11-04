@@ -38,6 +38,7 @@ subprojects {
         annotation("javax.persistence.Entity")
         annotation("javax.persistence.Embeddable")
         annotation("javax.persistence.MappedSuperclass")
+        annotation("org.axonframework.spring.stereotype.Aggregate")
     }
 
     allOpen {
@@ -70,6 +71,11 @@ subprojects {
         imports {
             mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
         }
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     tasks.withType<KotlinCompile> {
