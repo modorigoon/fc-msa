@@ -1,6 +1,8 @@
 package me.modorigoon.pay.money.adapter.`in`.web
 
 import me.modorigoon.pay.common.WebAdapter
+import me.modorigoon.pay.money.application.usecase.CreateMemberMoneyCommand
+import me.modorigoon.pay.money.application.usecase.CreateMemberMoneyUseCase
 import me.modorigoon.pay.money.application.usecase.IncreaseMoneyRequestCommand
 import me.modorigoon.pay.money.application.usecase.IncreaseMoneyRequestUseCase
 import org.springframework.http.HttpStatus
@@ -12,7 +14,10 @@ import org.springframework.web.bind.annotation.RestController
 
 @WebAdapter
 @RestController
-class RequestMoneyChangingController(val increaseMoneyRequestUseCase: IncreaseMoneyRequestUseCase) {
+class RequestMoneyChangingController(
+    val increaseMoneyRequestUseCase: IncreaseMoneyRequestUseCase,
+    val createMemberMoneyUseCase: CreateMemberMoneyUseCase
+) {
 
     @PostMapping("/money/increase")
     fun increaseMoney(@RequestBody request: IncreaseMoneyChangingRequest): ResponseEntity<MoneyChangingResultDetail> {
@@ -29,5 +34,10 @@ class RequestMoneyChangingController(val increaseMoneyRequestUseCase: IncreaseMo
         )
 
         return ResponseEntity(resultDetail, HttpStatus.CREATED)
+    }
+
+    @PostMapping("/money/create-member-money")
+    fun createMemberMoney(@RequestBody request: CreateMemberMoneyRequest) {
+        createMemberMoneyUseCase.createMemberMoney(CreateMemberMoneyCommand(request.membershipId))
     }
 }
